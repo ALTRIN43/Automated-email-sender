@@ -97,3 +97,5 @@ Message sent successfully
 ```
 The birthday person will receive a personalized email with a birthday message.
 
+
+## Can modify this and send different types of mails :)
