@@ -1,101 +1,90 @@
-# Automated Birthday Wisher
+# Birthday Wisher Project
 
-This project is an **Automated Birthday Wisher** built using **Python**. It automatically sends birthday wishes via email to individuals listed in a CSV file on their special day.
+## Overview
+This project is a simple automated birthday wisher built using Python. It reads birthday data from a CSV file and sends personalized birthday wishes via email.
 
----
+## How It Works
+1. The script reads birthdays from `birthdays.csv`.
+2. It checks if today's date matches any birthday.
+3. If a match is found, it randomly selects a birthday message template from the `letter_templates` folder.
+4. The email is sent to the birthday person with the personalized message.
 
-## 📜 How It Works
+## Files
+- `birthdays.csv`: A CSV file containing the name, email, year, month, and day of the birthday persons.
+- `letter_templates/letter_1.txt`, `letter_templates/letter_2.txt`, `letter_templates/letter_3.txt`: Sample letter templates with `[NAME]` placeholder.
+- `birthday_wisher.py`: The main Python script.
 
-- The script reads a CSV file called `birthdays.csv` containing details like **Name, Email, Month, and Day**.
-- It checks if **today's date matches any birthday in the CSV file**.
-- If a match is found, it picks a random letter template from the `letter_templates` folder (e.g., `letter_1.txt`, `letter_2.txt`, `letter_3.txt`).
-- It **replaces [NAME] in the template** with the birthday person's name.
-- It sends an email with the customized message to the recipient using **smtplib**.
-
----
-
-## 🗂️ File Structure
-
-```
-project_folder/
-│
-├── birthdays.csv
-│
-├── birthday_wisher.py  # This is the main script
-│
-├── letter_templates/
-│   ├── letter_1.txt
-│   ├── letter_2.txt
-│   └── letter_3.txt
-```
-
----
-
-## 📝 Sample `birthdays.csv`
-
-| name   | email             | month | day |
-|--------|--------------------|-------|-----|
-| John   | john@example.com   | 2     | 16  |
-| Alice  | alice@example.com  | 3     | 25  |
-
----
-
-## 📝 Sample `letter_1.txt`
-
-```
-Happy Birthday [NAME]!
-Have a wonderful year ahead!
-```
-
----
-
-## 🚀 How to Run
-
-1. **Replace the placeholders in `birthday_wisher.py` with your email credentials:**
-   ```python
-   my_email = "your_email@example.com"
-   password = "your_app_password"
+## Running on PythonAnywhere
+1. Create a free account on [PythonAnywhere](https://www.pythonanywhere.com/).
+2. Open a Bash console and clone your repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
    ```
+3. Navigate to your project directory:
+   ```bash
+   cd your-repo
+   ```
+4. Create a scheduled task in PythonAnywhere to run the script daily:
+   - Go to the 'Tasks' tab.
+   - Click 'Add a new scheduled task'.
+   - Enter the path to your script (e.g., `/home/your-username/your-repo/birthday_wisher.py`).
+   - Set the time and frequency for the task to run.
 
-2. **Ensure you have allowed Less Secure Apps in your email settings** or **created an App Password** if using Gmail.
-
-3. **Install pandas library (if not already installed):**
+## Running Locally
+1. Install required libraries (if not already installed):
    ```bash
    pip install pandas
    ```
-
-4. **Run the script:**
+2. Replace the following fields in `birthday_wisher.py` with your own details:
+   ```python
+   my_email = "example@example.com"  # Replace with your email
+   password = "yourpassword"  # Replace with your password
+   ```
+3. Run the script:
    ```bash
    python birthday_wisher.py
    ```
 
----
-
-## ⚠️ Important Notes
-
-- **Do not upload your personal email credentials to GitHub.** Always use placeholders like `your_email@example.com` and `your_app_password` before pushing the code.
-- **Use Two Emails:**
-  - **Sender Email (Your Email):** This is the email you are using to send birthday wishes.
-  - **Recipient Email:** Comes from the `birthdays.csv` file.
-
----
-
-## 🛠️ Requirements
-
-- Python
-- pandas
-- smtplib (built-in)
-- datetime (built-in)
-
----
-
-## 🌟 Project Outcome
-
-When the script detects a birthday match, you should see the message:
+## Sample CSV File
+```csv
+name,email,year,month,day
+John Doe,john.doe@example.com,1990,2,18
+Jane Smith,jane.smith@example.com,1995,3,15
+Bob Johnson,bob.johnson@example.com,1988,4,10
 ```
-Message sent successfully
+
+## Sample Letter Templates
+### letter_1.txt
 ```
-The birthday person will receive a personalized email with a birthday message.
+Dear [NAME],
 
+Wishing you a fantastic birthday filled with joy and happiness!
+Have a wonderful year ahead.
 
-## Can modify this and send different types of mails :)
+Best regards,
+Your Friend
+```
+### letter_2.txt
+```
+Happy Birthday [NAME]!
+
+Hope this day brings you lots of laughter, love, and cheer.
+Enjoy your special day to the fullest!
+
+Cheers,
+Your Friend
+```
+### letter_3.txt
+```
+Hello [NAME],
+
+On this wonderful day, I just want to remind you how special you are to me.
+Have a great birthday and an amazing year ahead!
+
+With love,
+Your Friend
+```
+
+## Important Notes
+- Make sure to enable 'Less secure app access' in your Gmail account settings if using Gmail. Alternatively, use an app password for better security.
+- Do not share your email credentials in public repositories. Consider using environment variables or a `.env` file to secure your credentials.
