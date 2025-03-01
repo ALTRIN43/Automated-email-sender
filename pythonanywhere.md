@@ -90,7 +90,7 @@ This README provides an overview of **PythonAnywhere**, its uses, and step-by-st
 ---
 
 ## Author
-This guide was created by **[Your Name or GitHub Username]**.
+This guide was created by **ALTRIN JESURAJ**.
 
 ---
 
