@@ -6,7 +6,7 @@ import smtplib
 my_email = "example@example.com"  # Replace with your email
 password = "yourpassword"  # Replace with your password
 
-today = datetime.now()
+today = datetime.now() # give current date and time
 today_md = (today.month, today.day)  # month and date
 
 data = pandas.read_csv("birthdays.csv")
