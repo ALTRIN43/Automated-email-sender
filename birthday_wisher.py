@@ -25,7 +25,7 @@ if today_md in birthdays_dict:
         connection.sendmail(
             from_addr=my_email, # sender mail id
             to_addrs=birthday_person['email'],
-            msg=f"Subject:Happy Birthday!\n\n{contents}"
+            msg=f"Subject:Happy Birthday!!!\n\n{contents}"
         )
 
 print("Message sent successfully") # prints success message if it's done
